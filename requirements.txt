@@ -1,0 +1,6 @@
+streamlit 
+google-generativeai
+pandas
+python_version> 
+pandas 
+numpy
