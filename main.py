@@ -1,10 +1,30 @@
 import streamlit as st
 import google.generativeai as genai
-    
-    
+import os
+from dotenv import load_dotenv
+
+############## 1. way to keep yor secreate key################
+# Load the variables from the .env file
+load_dotenv()    
+# Grab the key from the environment
+#api_key = os.getenv("GOOGLE_API_KEY") 
+############## 1. way to keep yor secreate key################
+
+############## 2. way to keep yor secreate key################
+# Accessing the secret
+# Streamlit looks in .streamlit/secrets.toml locally 
+# or the "Secrets" settings on the cloud automatically.
+api_key = st.secrets["OPENAI_API_KEY"]
+#if api_key:
+ #   st.success("API Key successfully loaded!")
+#else:
+ #   st.error("API Key not found.") 
+
+############## 2. way to keep yor secreate key################
  
 # 1. Setup API Key (Replace with your actual key or use secrets)
-genai.configure(api_key="AIzaSyDwb2_B-q9T3_C1F5GskR0VITgPlCycJKc")
+
+genai.configure(api_key=api_key)
  
 # 2. System Instructions: This "locks" the AI into a Math-only role
 SYSTEM_PROMPT = """
