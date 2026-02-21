@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Load the variables from the .env file
 load_dotenv()    
 # Grab the key from the environment
-api_key = os.getenv("GOOGLE_API_KEY") 
+api_key = st.secrets["GOOGLE_API_KEY"]
 ############## 1. way to keep yor secreate key################
 
 ############## 2. way to keep yor secreate key################
@@ -64,4 +64,5 @@ if st.button("Solve it!"):
         st.warning("Please enter a question first!")
 
 st.divider()
+
 st.caption("Happy Learning! if you have any feedback, Let me Know!")
